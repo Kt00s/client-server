@@ -3,43 +3,33 @@ package demo.entities;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "App_Role", //
+@Table(name = "App_Conference", //
         uniqueConstraints = { //
-                @UniqueConstraint(name = "APP_ROLE_UK", columnNames = "Role_Name") })
+                @UniqueConstraint(name = "Conference_UK", columnNames = { "User_Id", "Role_Id" }) })
+
 public class AppConference {
 
     @Id
+    @OneToMany(fetch = FetchType.LAZY)
     @GeneratedValue
-    @Column(name = "Conference_Id", nullable = false)
-    private Long conferenceId;
+    @Column(name = "Id", nullable = false)
+    private Long id;
 
-    @Column(name = "Conference_Describe", length = 30, nullable = false)
-    private String conferenceDescribe;
+    private Long numOfVisitors;
 
-    @Column(name = "Ivent", nullable = false)
-    private Long ivent;
-
-    public Long getConferenceId() {
-        return conferenceId;
+    public Long getId() {
+        return id;
     }
 
-    public void setConferenceId(Long roleId) {
-        this.conferenceId = conferenceId;
+    public void setId(Long id) {
+        this.id = id;
     }
 
-    public String getConferenceDescribe() {
-        return conferenceDescribe;
+    public Long getNumOfVisitors() {
+        return numOfVisitors;
     }
 
-    public void setConferenceDescribe(String roleDescribe) {
-        this.conferenceDescribe = conferenceDescribe;
-    }
-
-    public Long getIvent() {
-        return ivent;
-    }
-
-    public void setIvent(Long ivent) {
-        this.ivent = ivent;
+    public void setNumOfVisitors(Long numOfVisitors) {
+        this.numOfVisitors = numOfVisitors;
     }
 }
