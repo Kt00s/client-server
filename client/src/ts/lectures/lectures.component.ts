@@ -5,7 +5,7 @@ import { Lecture} from "../../lecture";
 import {LectureService} from "../../lecture.service";
 
 @Component({
-    selector: 'app-heroes',
+    selector: 'app-lectures',
     template: `<h2>My Lectures</h2>
         <div class="form-row">
             <div class="form-group col-md-6">

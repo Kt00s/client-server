@@ -1,5 +1,6 @@
 package demo.service;
 
+import demo.dao.AppLectureDAO;
 import demo.dao.AppRoleDAO;
 import demo.dao.AppUserDAO;
 import demo.model.AppUser;

@@ -33,15 +33,8 @@ export class LectureService {
             );
     }
 
-   /* getLecturesBy (): Observable<Lecture[]> {
-        return this.http.get<Lecture[]>(this.lecturesUrl)
-            .pipe(
-                tap(lectures => this.log('fetched lectures')),
-                catchError(this.handleError('getLectures', []))
-            );
-    }
 
-    /** GET hero by id. Return `undefined` when id not found */
+    /** GET lecture by id. Return `undefined` when id not found */
     getLectureNo404<Data>(id: number): Observable<Lecture> {
         const url = `${this.lecturesUrl}/?id=${id}`;
         return this.http.get<Lecture[]>(url)
@@ -55,7 +48,7 @@ export class LectureService {
             );
     }
 
-    /** GET hero by id. Will 404 if id not found */
+    /** GET lecture by id. Will 404 if id not found */
     getLecture (id: number): Observable<Lecture> {
         const url = `${this.lecturesUrl}/${id}`;
         return this.http.get<Lecture>(url).pipe(
@@ -64,13 +57,6 @@ export class LectureService {
         );
     }
 
-    getLectureByConfId (confId: number): Observable<Lecture[]> {
-        const url = `${this.lecturesUrl}/?confId=${confId}`;
-        return this.http.get<Lecture[]>(url).pipe(
-            tap(_ => this.log(`found lectures matching "${confId}"`)),
-            catchError(this.handleError<Lecture[]>('searchLectures', []))
-        );
-    }
 
     /* GET lectures whose name contains search term */
     searchLectures(term: string): Observable<Lecture[]> {
@@ -105,7 +91,7 @@ export class LectureService {
         );
     }
 
-    /** PUT: update the hero on the server */
+    /** PUT: update the lecture on the server */
     updateLecture (hero: Lecture): Observable<any> {
         return this.http.put(this.lecturesUrl, hero, httpOptions).pipe(
             tap(_ => this.log(`updated lecture id=${hero.id}`)),
@@ -133,7 +119,7 @@ export class LectureService {
         };
     }
 
-    /** Log a HeroService message with the MessageService */
+    /** Log a LectureService message with the MessageService */
     private log(message: string) {
         this.messageService.add(`LectureService: ${message}`);
     }

@@ -4,7 +4,8 @@ import {LectureService} from "../../lecture.service";
 
 @Component({
     selector: 'app-dashboard',
-    template: `<h3>Lectures</h3>
+    template: `       
+        <h3>Lectures</h3>
     <app-lecture-list-for-user></app-lecture-list-for-user>
 <!--<div class="grid grid-pad">
   <a *ngFor="let lecture of lectures" class="col-1-4"
@@ -27,6 +28,6 @@ export class DashboardComponent implements OnInit {
 
     getLectures(): void {
         this.heroService.getLectures()
-            .subscribe(lectures => this.lectures = lectures.slice(1, 5));
+            .subscribe(lectures => this.lectures = lectures);
     }
 }

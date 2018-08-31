@@ -22,6 +22,10 @@ public class AppUser {
     @Column(name = "Enabled", length = 1, nullable = false)
     private boolean enabled;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @Column (name = "Conference_Id", nullable = false)
+    private Long conferenceId;
+
     public Long getUserId() {
         return userId;
     }

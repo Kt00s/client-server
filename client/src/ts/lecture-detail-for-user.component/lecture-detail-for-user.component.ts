@@ -11,27 +11,19 @@ import {LectureService} from "../../lecture.service";
   <h2>{{lecture.name | uppercase}} Details</h2>
   <div><span>id: </span>{{lecture.id}}</div>
   <div>
-      <div>
-    <label>name:
-      <input [(ngModel)]="lecture.name" placeholder="name"/>
-    </label>
-      <label>speaker:
-          <input [(ngModel)]="lecture.speaker" placeholder="speaker"/>
-      </label>
-      </div>
-      <label>description:
-          <input [(ngModel)]="lecture.expl" placeholder="expl"/>
-      </label>
+      <ul>
+   <li>name: {{lecture.name}}</li>
+      <li>speaker: {{lecture.speaker}}</li>
+      <li>description: {{lecture.expl}}</li>
 
-      <label>other info:
-          <input [(ngModel)]="lecture.other" placeholder="other"/>
-      </label>
-  </div>
+      <li>other info: {{lecture.other}}</li>
+      </ul>
+    </div>
   <button (click)="goBack()">go back</button>
 </div>`
 })
 export class LectureDetailComponentForUser implements OnInit {
-    @Input() lecture: Lecture;
+    lecture: Lecture;
 
     constructor(
         private route: ActivatedRoute,
